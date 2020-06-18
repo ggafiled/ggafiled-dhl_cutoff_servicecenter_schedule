@@ -1,2 +1,2 @@
 "# ggafiled-dhl_cutoff_servicecenter_schedule" 
-[PDF](User Manual)
+[PDF](https://github.com/ggafiled/ggafiled-dhl_cutoff_servicecenter_schedule/blob/master/User%20Manual.pdf)
