@@ -1,0 +1,76 @@
+::-webkit-scrollbar{
+  display: block !important;
+}
+body {
+  font-family: 'Sarabun', sans-serif !important;
+  font-weight: normal;
+  margin: auto;
+  overflow: auto;
+}
+
+.container-fluid {
+  display: flexbox;
+  position: static;
+  margin: auto;
+  margin-top: 2em;
+}
+
+.txt-header {
+  margin-left: 3em !important;
+  margin-bottom: 1em !important;
+  color: #9e9e9e;
+}
+
+.justify-content-center {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+table {
+  text-align: justify;
+  text-align: center;
+  font-size: 16px !important;
+}
+
+table tbody tr,th,td{
+  justify-content: center;
+  vertical-align: middle;
+  text-align: center;
+  justify-content: space-around;
+}
+
+table thead {
+  font-weight: bold;
+}
+
+table tbody tr,
+th,
+td {
+  height: 1em;
+}
+
+span:not([class]) {
+  cursor: text;
+  padding: 0.3em;
+  width: 100%;
+  height: 100%;
+}
+.card{
+  overflow: scroll;
+  justify-content: space-around;
+  vertical-align: middle;
+  margin: auto;
+  width: 98vw;
+}
+.card .card-header h1,h2,h3,h4,h5,h6{
+  bottom: 0;
+  padding: 0;
+  margin-bottom: auto;
+  justify-content: space-between;
+  text-align: center;
+  vertical-align: middle;
+}
+.card:first-child() {
+  margin-top: 2em;
+}

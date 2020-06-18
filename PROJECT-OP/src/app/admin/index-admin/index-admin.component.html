@@ -1,0 +1,46 @@
+<div class="container-fluid">
+  <div>
+    <div class="container justify-content-center">
+      <h1>
+        Dashboard
+      </h1>
+      <div class="row mx-md-n5 mx-auto">
+        <a class="card" [routerLink]="['/edit/servicecenter']" target="_blank">
+          <div class="card-body">
+            <b>Edit:</b> Service center.
+          </div>
+        </a>
+        <a class="card" [routerLink]="['/edit/cutoff']" target="_blank">
+          <div class="card-body">
+            <b>Edit:</b> Cut - Off time.
+          </div>
+        </a>
+        <a class="card" [routerLink]="['/edit/timerange']">
+          <div class="card-body">
+            <b>Edit:</b> Time range.
+          </div>
+        </a>
+        <div class="card">
+          <label>
+            <b>Edit:</b> Video Presentation
+            <small id="Help" class="form-text text-muted">Only 1 file (maxSize:500MB).</small>
+          </label>
+          <form class="form-inline">
+            <div class="input-group mb-2 mr-sm-2">
+              <div class="custom-file">
+                <input type="file" class="custom-file-input" name="video" accept="video/mp4,video/x-m4v,video/*"
+                  ng2FileSelect [uploader]="uploader">
+                <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                <div class="invalid-feedback">Example invalid custom file feedback</div>
+              </div>
+            </div>
+          </form>
+          <button type="submit" class="btn btn-warning mb-2 justify-content-md-end" (click)="uploader.uploadAll()"
+            [disabled]="!uploader.getNotUploadedItems().length">
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <div class="row"><h3 class="mx-md-n5 mx-auto txt-header">
+      Time Range
+    </h3>
+  </div>
+    
+  <div class="container">
+    <table #mytable class="table table-bordered mat-elevation-z2" width="100%">
+      <thead class="table-header">
+        <tr>
+          <td class="text-center"> # </td>
+          <td class="text-center"><i class="fas fa-book mr-2" aria-hidden="true"></i>Display Name</td>
+          <td class="text-center"><i class="fas fa-table mr-2" aria-hidden="true"></i>Start Time </td>
+          <td class="text-center"><i class="fas fa-table mr-2" aria-hidden="true"></i>End Time </td>
+          <td class="text-center"><i class="far fa-clock"></i> Time Type </td>
+          <td class="text-center">
+            <i class="fab fa-galactic-republic"></i> Action &nbsp;&nbsp; <button (click)="openDialog('Add',{})" class="btn btn-secondary"><i
+                class="far fa-plus-square"></i> Add Row</button>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="{{(i % 2 == 0)? 'row-interest':'row-normal'}}" *ngFor="let element of timeRangeData;index as i">
+          <td class="text-center"> {{i+1}} </td>
+          <td class="text-center"> {{element.Name_display}} </td>
+          <td class="text-center"> {{element.Start_time}} </td>
+          <td class="text-center"> {{element.End_time}} </td>
+          <td class="text-center"> {{element.Type_name}} </td>
+          <td class="action-link">
+            <a (click)="openDialog('Update',element)" class="text-center"><i class="fas fa-edit mr-2 grey-text" aria-hidden="true"></i>Edit</a>|
+            <a (click)="openDialog('Delete',element)"><i class="far fa-trash-alt"></i>
+              Delete</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,81 @@
+::-webkit-scrollbar {
+  display: block !important;
+}
+
+body {
+  font-family: 'Sarabun', sans-serif;
+  font-weight: normal;
+  overflow: hidden !important;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.container h1 {
+  left: 0;
+  margin-bottom: 1em !important;
+  margin-left: 0;
+  color: #9e9e9e;
+  flex-direction: column;
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  justify-content: left;
+}
+
+.mx-auto {
+  margin: auto;
+}
+
+.card {
+  width: calc(100% * (1/3) - 20px - 1px);
+  padding: 2em;
+  height: calc(100% * (1/2) - 40px - 1px);
+  justify-content: center;
+  vertical-align: middle;
+  text-align: center;
+
+}
+
+.card:not(:last-child) {
+  margin-bottom: 1em !important;
+  margin-right: 0.5em;
+}
+
+.card:hover {
+  cursor: pointer;
+  background-color: #f5f5f5;
+}
+
+@media only screen and (min-width: 300px) and (max-width:1200px) {
+
+  /* default iPad screens */
+  .container {
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+
+  .card {
+    flex: 3 0 (100 - (1 * box-width-percent)) / 8;
+    width: 300px;
+    height: 30vh;
+    left: 0;
+    right: 0;
+  }
+
+  .card:not(:last-child) {
+    margin-bottom: 1em !important;
+  }
+
+}

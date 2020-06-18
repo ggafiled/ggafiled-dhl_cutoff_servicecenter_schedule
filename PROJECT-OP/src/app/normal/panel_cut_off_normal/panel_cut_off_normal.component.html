@@ -1,0 +1,57 @@
+<div class="container-fluid nocursor" align="justify">
+  <div class="card justify-content-center">
+    <div>{{dateTime | amDateFormat: 'Do MMMM YYYY, HH:mm'}}</div>
+  </div>
+  <div class="{{(videoShow===true)?'d-none':''}}">
+    <table class="table borderless" #tablePanel>
+      <thead>
+        <tr class="tr-head">
+          <td scope="col" class="col-red text-center">OUTBOUND</td>
+          <td scope="col" class="col-yellow" colspan="4">&nbsp;&nbsp;&nbsp;SHUTTLE SCHEDULE</td>
+        </tr>
+        <tr>
+          <td scope="col" class="col-yellow text-center top-left-radius">Operating Day</td>
+          <td scope="col" class="col-red" colspan="5">&nbsp;&nbsp;&nbsp;Time</td>
+        </tr>
+        <tr>
+          <td class="text-center col-red">Cut off</td>
+          <td class="text-center col-yellow col-border">1-2-3-4</td>
+          <td class="text-center col-yellow col-border">5</td>
+          <td class="text-center col-yellow col-border">6</td>
+          <td class="text-center col-yellow col-border">7</td>
+        </tr>
+      </thead>
+      <tbody class="{{(loadDataIsSuccess===false)?'d-none':''}}">
+        <tr class="{{(i % 2 == 0)? 'row-interest':'row-normal'}}" *ngFor="let _data of data;index as i">
+          <td class="text-center col-border "><strong>{{_data.Source}} Cut off {{_data.Id}} {{_data.Destination}}</strong></td>
+          <td class="text-center col-border">
+            <app-panel-field [date]=_data.Time1 [alertIcon]=false></app-panel-field>
+          </td>
+          <td class="text-center col-border">
+            <app-panel-field [date]=_data.Time2 [alertIcon]=false></app-panel-field>
+          </td>
+          <td class="text-center col-border">
+            <app-panel-field [date]=_data.Time3 [alertIcon]=false></app-panel-field>
+          </td>
+          <td class="text-center col-border">
+            <app-panel-field [date]=_data.Time4 [alertIcon]=false></app-panel-field>
+          </td>
+        </tr>
+      </tbody>
+      <tbody class="{{(loadDataIsSuccess===true)?'d-none':''}}">
+        <tr>
+          <td class="text-center col-border" colspan="5">
+            Data is can't be reached.
+            <span class="spinner-grow spinner-grow-sm text-warning" role="status" aria-hidden="true"></span>
+            Loading...
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="embed-responsive rounded-lg embed-responsive-16by9 {{(videoShow)?'':'d-none'}}">
+    <video *ngIf="videoShow===true" autoplay loop width="100%" height="100%" #videoPlayer>
+      <source src="{{urlStreamimg}}">
+    </video>
+  </div>
+</div>

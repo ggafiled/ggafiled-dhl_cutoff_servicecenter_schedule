@@ -1,0 +1,75 @@
+::-webkit-scrollbar {
+  display: none !important;
+}
+
+body {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0;
+  margin: 0;
+  font-family: 'Sarabun', sans-serif;
+  overflow: hidden;
+}
+
+.date {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  font-size: 56px;
+  color: #b0bec5;
+}
+
+.close {
+  margin-left: 0.1em;
+  margin-top: 0.3em;
+  font-weight: normal;
+}
+
+.card {
+  flex: 1 0 (100 - (4 * box-width-percent)) / 8;
+  justify-content: center;
+  text-align: center;
+}
+
+.card:hover {
+  cursor: pointer;
+  background-color: #f5f5f5;
+}
+
+.card:not(:last-child) {
+  margin-right: 0.8em;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.card-header {
+  background-color: transparent !important;
+  font-size: 20px;
+  left: 0px;
+  text-align: left;
+  border: none;
+  color: #b0bec5;
+}
+
+.nav-admin {
+  position: absolute !important;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100vw;
+  height: 25vh;
+  background-color: white;
+  text-align: center;
+  opacity: 0.7;
+}
+
+.shadow-top {
+  box-shadow: 0 -3px 3px -5px rgba(0, 0, 0, 0.2);
+}

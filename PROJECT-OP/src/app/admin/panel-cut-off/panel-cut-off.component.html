@@ -1,0 +1,80 @@
+<div class="container-fluid">
+  <div class="row">
+    <h3 class="mx-md-n5 mx-auto txt-header">
+      Cut Off
+    </h3>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <label for="exampleInputEmail1">Time Range</label>
+      <select class="form-control" [(ngModel)]="TimeRangeValue" (change)="onSelectionChange()">
+        <option [ngValue]="undefined" disabled selected>-- Choose Time --</option>
+        <option *ngFor="let op of timeRangeData" [ngValue]="op.Id">
+          {{op.Name_display}} ("FROM" {{op.Start_time}} "TO" {{op.End_time}})
+        </option>
+      </select>
+      <small id="timeRangeHelp" class="form-text text-muted">Select time range that you want to edit or add time
+        schedule.</small>
+    </div>
+    <div class="col-md-2">
+      <button type="button" class="btn btn-warning text-light" (click)="getData()">Select</button>
+    </div>
+  </div>
+</div>
+<br>
+<div class="card {{(showTable == false)?'d-none':''}}">
+  <div class="card-header">
+    <h4 class="text-center font-weight-bold text-uppercase py-4 text-secondary">Editable table</h4>
+    <h5 class="text-center text-secondary">Click field for edition [Auto Save]</h5>
+  </div>
+  <table #table class="table table-bordered table-sm text-secondary">
+    <thead>
+      <tr>
+        <td>Cut Off Source</td>
+        <td>Cut Off Destination</td>
+        <td>Car No. 1-2-3-4</td>
+        <td>Car No. 5</td>
+        <td>Car No. 6</td>
+        <td>Car No. 7</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let _data of data;let id = index">
+        <td>
+          <span (keyup)="changeValue(id, 'Source', $event)" (blur)="updateList(id, 'Source', $event)"
+            contenteditable="true">{{_data.Source}}</span>
+        </td>
+        <td>
+          <span (keyup)="changeValue(id, 'Destination', $event)" (blur)="updateList(id, 'Destination', $event)"
+            contenteditable="true">{{_data.Destination}}</span>
+        </td>
+        <td>
+          <span (keyup)="changeValue(id, 'Time1', $event)" (blur)="updateList(id, 'Time1', $event)"
+            contenteditable="true">{{_data.Time1}}</span>
+        </td>
+        <td>
+          <span (keyup)="changeValue(id, 'Time2', $event)" (blur)="updateList(id, 'Time2', $event)"
+            contenteditable="true">{{_data.Time2}}</span>
+        </td>
+        <td>
+          <span (keyup)="changeValue(id, 'Time3', $event)" (blur)="updateList(id, 'Time3', $event)"
+            contenteditable="true">{{_data.Time3}}</span>
+        </td>
+        <td>
+          <span (keyup)="changeValue(id, 'Time4', $event)" (blur)="updateList(id, 'Time4', $event)"
+            contenteditable="true">{{_data.Time4}}</span>
+        </td>
+      </tr>
+    </tbody>
+    <thead>
+        <tr>
+          <td>Cut Off Source</td>
+          <td>Cut Off Destination</td>
+          <td>Car No. 1-2-3-4</td>
+          <td>Car No. 5</td>
+          <td>Car No. 6</td>
+          <td>Car No. 7</td>
+        </tr>
+      </thead>
+  </table>
+</div>

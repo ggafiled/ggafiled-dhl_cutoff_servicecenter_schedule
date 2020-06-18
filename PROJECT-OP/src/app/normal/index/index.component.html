@@ -1,0 +1,25 @@
+<div class="container" align="justify">
+  <div class="date">{{dateTime | amDateFormat: 'Do MMMM YYYY, HH:mm:ss'}}</div>
+  <div class="nav-admin fadeInUp shadow-top">
+    <div class="row justify-content-center">
+        <div class="card-header">Please select the item you wish to use below. for presentation.</div>
+      <div class="container fadeInUp justify-content-center">
+          <div class="card" routerLink="/admin">
+            <div class="card-body">
+                &#9749; &nbsp; Admin Dashboard.
+            </div>
+          </div>
+          <div class="card" routerLink="/servicecenter">
+            <div class="card-body">
+                &#9981; &nbsp; Service Center Schedule.
+            </div>
+          </div>
+          <div class="card" routerLink="/cutoff">
+            <div class="card-body">
+                &#9981; &nbsp; Cut Off Schedule.
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

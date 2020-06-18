@@ -1,0 +1,26 @@
+.navbar {
+  display: flex !important;
+  flex-direction: row;
+  flex: 1;
+  justify-content: space-between !important;
+  vertical-align: top;
+  background: #FFCC00;
+  border-bottom: 3px solid #CC0000;
+  background: linear-gradient(to right, #fbc02d , #FFEDA5) !important;
+  box-shadow: 0 8px 6px -6px #999;
+  border-radius: 0 0 3px 3px;
+  max-height: 56px;
+}
+
+.card {
+  padding: 0.2rem;
+  opacity: 0.5;
+}
+
+.outlet {
+  display: flex !important;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center !important;
+  vertical-align: center;
+}

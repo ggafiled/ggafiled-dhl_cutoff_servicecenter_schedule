@@ -1,0 +1,30 @@
+<!-- dialog-box.component.html -->
+<h1 mat-dialog-title>Row Action :: <strong>{{action}}</strong></h1>
+<div mat-dialog-content [formGroup]="form">
+  <mat-form-field *ngIf="action != 'Delete';">
+    <input type="text" placeholder="{{action}} Name" matInput [(ngModel)]="local_data.Name_display" formControlName="Name_display" required>
+  </mat-form-field>
+  <mat-form-field *ngIf="action != 'Delete';">
+    <input type="text" placeholder="{{action}} Start Time (00:00)" matInput [(ngModel)]="local_data.Start_time" formControlName="Start_time" required>
+  </mat-form-field>
+  <mat-form-field *ngIf="action != 'Delete';">
+    <input type="text" placeholder="{{action}} End Time (00:00)" matInput [(ngModel)]="local_data.End_time" formControlName="End_time" required>
+  </mat-form-field>
+  <select class="form-control" [(ngModel)]="local_data.Type_ID" *ngIf="action != 'Delete';" [attr.disabled]="action != 'Add' ? '' : null" [disabled]="action != 'Add' ? '' : null" formControlName="Type_ID" required>
+    <option [ngValue]="undefined" disabled [selected]="action == 'Add'">-- Choose Time --</option>
+    <option *ngFor="let op of timeRangeTypeData" [ngValue]="op.Type_ID" [selected]="local_data.Type_ID == op.Type_ID && action == 'Update'">
+      {{op.Type_name}}
+    </option>
+  </select>
+  <ng-container *ngIf="action == 'Delete';">
+    Sure to delete <b>{{local_data.Name_display}} : {{local_data.Start_time}} TO {{local_data.End_time}}</b>?
+    From <b>{{local_data.Type_name}}</b>
+  </ng-container>
+  <ng-container *ngIf="action == 'Success';">
+    Process is success!
+  </ng-container>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="doAction()" [disabled]="form.invalid && action == 'Add'">{{action}}</button>
+  <button mat-button (click)="closeDialog()" mat-flat-button color="warn">Cancel</button>
+</div>

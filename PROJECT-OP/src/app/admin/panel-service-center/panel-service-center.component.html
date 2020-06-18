@@ -1,0 +1,160 @@
+<div class="container-fluid">
+  <div class="row">
+    <h3 class="mx-md-n5 mx-auto txt-header">
+      BKK-HUB Service Center.
+    </h3>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <label for="exampleInputEmail1">Time Range</label>
+      <select class="form-control" [(ngModel)]="TimeRangeValue" (change)="onSelectionChange()">
+        <option [ngValue]="undefined" disabled selected>-- Choose Time --</option>
+        <option *ngFor="let op of timeRangeData" [ngValue]="op.Id">
+          {{op.Name_display}} ("FROM" {{op.Start_time}} "TO" {{op.End_time}})
+        </option>
+      </select>
+      <small id="timeRangeHelp" class="form-text text-muted">Select time range that you want to edit or add time
+        schedule.</small>
+    </div>
+    <div class="col-md-2">
+      <button type="button" class="btn btn-warning text-light" (click)="getData()">Select</button>
+    </div>
+  </div>
+</div>
+<br>
+<div class="card {{(showTable == false)?'d-none':''}}">
+  <div class="card-header">
+    <h4 class="text-center font-weight-bold text-uppercase py-4 text-secondary">Editable table</h4>
+    <h5 class="text-center text-secondary">Click field for edition [Auto Save]</h5>
+  </div>
+  <table class="table table-bordered table-sm text-secondary">
+    <thead>
+      <tr>
+        <td colspan="2">Operating Day</td>
+        <td colspan="4">Car No. 1</td>
+        <td colspan="4">Car No. 2-3-4-5</td>
+        <td colspan="4">Car No. 6</td>
+        <td colspan="4">Car No. 7</td>
+      </tr>
+      <tr>
+        <td colspan="2">Service Center / Cycle (Source)</td>
+        <td>A</td>
+        <td>B</td>
+        <td>C</td>
+        <td>D</td>
+        <td>A</td>
+        <td>B</td>
+        <td>C</td>
+        <td>D</td>
+        <td>A</td>
+        <td>B</td>
+        <td>C</td>
+        <td>D</td>
+        <td>A</td>
+        <td>B</td>
+        <td>C</td>
+        <td>D</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let _data of data;let id = index">
+        <td colspan="2">
+          <span (keypress)="changeValue(id, 'Source', $event)" (blur)="updateList(id, 'Source', $event)"
+            contenteditable="true">{{_data.Source}}</span>
+        </td>
+        <td>
+          <span (keypress)="changeValue(id, 'Time1', $event)" (blur)="updateList(id, 'Time1', $event)"
+            contenteditable="true">{{_data.Time1}}</span>
+        </td>
+        <td>
+          <span (keypress)="changeValue(id, 'Time2', $event)" (blur)="updateList(id, 'Time2', $event)"
+            contenteditable="true">{{_data.Time2}}</span>
+        </td>
+        <td>
+          <span (keypress)="changeValue(id, 'Time3', $event)" (blur)="updateList(id, 'Time3', $event)"
+            contenteditable="true">{{_data.Time3}}</span>
+        </td>
+        <td>
+          <span (keypress)="changeValue(id, 'Time4', $event)" (blur)="updateList(id, 'Time4', $event)"
+            contenteditable="true">{{_data.Time4}}</span>
+        </td>
+        <td>
+          <span (keypress)="changeValue(id, 'Time5', $event)" (blur)="updateList(id, 'Time5', $event)"
+            contenteditable="true">{{_data.Time5}}</span>
+        </td>
+        <td>
+          <span (keypress)="changeValue(id, 'Time6', $event)" (blur)="updateList(id, 'Time6', $event)"
+            contenteditable="true">{{_data.Time6}}</span>
+        </td>
+        <td>
+          <span (keypress)="changeValue(id, 'Time7', $event)" (blur)="updateList(id, 'Time7', $event)"
+            contenteditable="true">{{_data.Time7}}</span>
+        </td>
+        <td>
+          <span (keypress)="changeValue(id, 'Time8', $event)" (blur)="updateList(id, 'Time8', $event)"
+            contenteditable="true">{{_data.Time8}}</span>
+        </td>
+        <td>
+          <span (keypress)="changeValue(id, 'Time9', $event)" (blur)="updateList(id, 'Time9', $event)"
+            contenteditable="true">{{_data.Time9}}</span>
+        </td>
+        <td>
+          <span (keypress)="changeValue(id, 'Time10', $event)" (blur)="updateList(id, 'Time10', $event)"
+            contenteditable="true">{{_data.Time10}}</span>
+        </td>
+        <td>
+          <span (keypress)="changeValue(id, 'Time11', $event)" (blur)="updateList(id, 'Time11', $event)"
+            contenteditable="true">{{_data.Time11}}</span>
+        </td>
+        <td>
+          <span (keypress)="changeValue(id, 'Time12', $event)" (blur)="updateList(id, 'Time12', $event)"
+            contenteditable="true">{{_data.Time12}}</span>
+        </td>
+        <td>
+          <span (keypress)="changeValue(id, 'Time13', $event)" (blur)="updateList(id, 'Time13', $event)"
+            contenteditable="true">{{_data.Time13}}</span>
+        </td>
+        <td>
+          <span (keypress)="changeValue(id, 'Time14', $event)" (blur)="updateList(id, 'Time14', $event)"
+            contenteditable="true">{{_data.Time14}}</span>
+        </td>
+        <td>
+          <span (keypress)="changeValue(id, 'Time15', $event)" (blur)="updateList(id, 'Time15', $event)"
+            contenteditable="true">{{_data.Time15}}</span>
+        </td>
+        <td>
+          <span (keypress)="changeValue(id, 'Time16', $event)" (blur)="updateList(id, 'Time16', $event)"
+            contenteditable="true">{{_data.Time16}}</span>
+        </td>
+      </tr>
+    </tbody>
+    <thead>
+      <tr>
+        <td colspan="2">Service Center / Cycle (Source)</td>
+        <td>A</td>
+        <td>B</td>
+        <td>C</td>
+        <td>D</td>
+        <td>A</td>
+        <td>B</td>
+        <td>C</td>
+        <td>D</td>
+        <td>A</td>
+        <td>B</td>
+        <td>C</td>
+        <td>D</td>
+        <td>A</td>
+        <td>B</td>
+        <td>C</td>
+        <td>D</td>
+      </tr>
+      <tr>
+        <td colspan="2">Operating Day</td>
+        <td colspan="4">Car No. 1</td>
+        <td colspan="4">Car No. 2-3-4-5</td>
+        <td colspan="4">Car No. 6</td>
+        <td colspan="4">Car No. 7</td>
+      </tr>
+    </thead>
+  </table>
+</div>

@@ -1,0 +1,124 @@
+::-webkit-scrollbar {
+  display: none !important;
+}
+
+body {
+  font-family: 'Sarabun', sans-serif;
+}
+
+.container-fluid {
+  margin: 0 auto;
+  margin-top: 10px;
+  justify-content: center !important;
+  vertical-align: middle !important;
+}
+
+.row-normal {
+  background-color: white;
+  opacity: 0.7;
+}
+
+.row-interest {
+  background-color: #fffde7;
+  opacity: 0.7;
+}
+
+.container-fluid:fullscreen {
+  position: absolute !important;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.col-red {
+  background-color: #BC0000;
+  color: white;
+}
+
+.col-yellow {
+  background-color: #FFCC00;
+  color: rgb(29, 28, 28);
+}
+
+table {
+  border: 0px solid black !important;
+  border-collapse: collapse;
+  border-radius: 1em;
+  overflow: hidden;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+table tr td th {
+  padding: 0px;
+}
+
+table tr td th {
+  height: 15px !important;
+}
+
+table td {
+  min-width: 180px;
+}
+
+table>tbody>tr>th,
+table>tfoot>tr>th,
+table>thead>tr>td,
+table>tbody>tr>td,
+table>tfoot>tr>td {
+  justify-content: center;
+  margin: auto;
+  vertical-align: middle;
+  border: 1px solid black !important;
+  border-right: 1px solid black !important;
+  font-size: calc(0.5vw + 0.5vh + 1vmin);
+}
+
+/* .tr-head {
+  border-bottom: 3px solid white;
+  border-bottom-color: white;
+} */
+
+table>thead>tr>th,
+table>tbody>tr>th,
+table>tfoot>tr>th,
+table>thead>tr>td,
+table>tbody>tr>td,
+table>tfoot>tr>td {
+  padding: 8px;
+  line-height: 1.42857143;
+  justify-content: center;
+  margin: auto;
+  vertical-align: middle;
+  border-top: 1px solid #ddd;
+  font-size: calc(0.5vw + 0.5vh + 1vmin);
+}
+
+.embed-responsive {
+  height: 80vh;
+}
+
+video {
+  object-fit: fill;
+}
+
+
+.card::before {
+  padding: 10px;
+}
+
+.card {
+  background-color: white;
+  box-shadow: 4px 4px 4px -4px #999;
+  width: calc(100vw - 50vw - 10px) !important;
+  max-height: 48px;
+  padding: 10px;
+  margin: 0 auto;
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  font-family: 'Sarabun', sans-serif;
+  font-size: calc(0.8vw + 0.8vh + 0.5vmin);
+}
